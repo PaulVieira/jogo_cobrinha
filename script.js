@@ -8,6 +8,8 @@ cobra[0] = {
 	y: 8 * box
 }
 
+let directions = "right";
+
 
 function criarBG(){
 	context.fillStyle = "lightgreen";
@@ -21,4 +23,27 @@ function criarCobrinha (){
 	}
 }
 
-criarBG
+function iniciarJogo() {
+	criarBG
+	criarCobrinha();
+
+	let cobraX = cobra[0].x;
+	let cobraY = cobra[0].y;
+
+	if (directions == "right") cobraX += box;
+	if (directions == "left") cobraX -= box;
+	if (directions == "up") cobraY -= box;
+	if (directions == "down") cobraY += box; 
+
+	//retirar ultimo elemento do array
+	cobra.pop();
+	let newhead = {
+		x: cobraX,
+		y: cobraY
+	}
+
+	cobra.push(newhead);
+}
+
+let jogo = setInterval(iniciarJogo, 100);
+
