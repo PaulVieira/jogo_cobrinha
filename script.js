@@ -1,6 +1,7 @@
-let canvas = document.getElementById("Cobra");
-let context = canvas.getContext("2d");
+let canvas = document.getElementById("cobra"); //criar elemento que irá rodar o jogo
+let context = canvas.getContext("2d"); //....
 let box = 32;
+let cobra = [];
 
 let cobra = [];
 cobra[0] = {
