@@ -54,6 +54,14 @@ function iniciarJogo() {
     if(cobra[0].y > 15 * box && direction == "down") cobra[0].y = 0;
     if(cobra[0].y < 0 && direction == 'up') cobra[0].y = 16 * box;
 
+	//criando for para checar choques e determinar fim do jogo
+	for(var i=1; i<cobra.length; i++) {
+		if(cobra[0] .x == cobra[i] .x && cobra[0] .y == cobra[i].y) {
+			clearInterval(jogo);//para o jogo
+			alert("Game Over!");
+		}
+	}
+
 	
 	criarBG
 	criarCobrinha();
