@@ -67,6 +67,14 @@ function iniciarJogo() {
 	if (directions == "up") cobraY -= box;
 	if (directions == "down") cobraY += box; 
 
+	//gerar comida
+	if(cobraX != food.x || cobraY != food.y) {
+		cobra.pop();
+	}else{
+		food.x = Math.floor(Math.random() * 15 +1) * box; //recebendo posição aleatoria
+        food.y = Math.floor(Math.random() * 15 +1) * box;
+	}
+
 	//retirar ultimo elemento do array
 	cobra.pop();
 	let newhead = {
